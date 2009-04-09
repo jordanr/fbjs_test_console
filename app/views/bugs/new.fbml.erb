@@ -1,0 +1,10 @@
+<h1>New bug</h1>
+
+<% facebook_form_for(@bug) do |f| %>
+  <%= f.error_messages %>
+
+    <%= f.text_field :js %>
+    <%= f.text_field :error %>
+    <%= f.buttons "Create" %>
+<% end %>
+

@@ -1,0 +1,24 @@
+<table>
+<!-- left side for sandbox and errors -->
+<tr>
+<td>
+<h1>FBJS Test Console</h1>
+ <form>
+   <div>Format: <%= select_tag "format_type", "<option value='fbml'>FBML</option>
+						<option value='js'>JavaScript</option>"%> </div> 
+   <div>Strict? <%= check_box_tag "strict"%> </div> 
+   <div style="height:300px; width: 306px;">
+	<%= text_area_tag "code", h("<a href=\"http://ask.com\" onclick=\"return confirm('Are you sure?');\">Hello World</a>"), :rows=>10, :cols=>40 %>
+   <div>
+   <%= submit_to_remote "submit", "Translate", :update => "translation", :with=>'Form.serialize(this.getForm())', :url=> {:action=>"", :only_path=>false, :canvas=>false } %>
+   </div>
+   <div>Doesn't work? (<%= link_to "Submit a bug.", new_bug_path %>)</div>
+   </div>
+ </form>
+</td>
+<td>
+  <span id="translation"><%= render_partial 'translation' %></span>
+</td>
+</tr>
+</table>
+

@@ -1,0 +1,10 @@
+  <h2>Translation</h2>
+  <div style="height:100px; width:306px;"><%= (@trans || "The translation will be shown here") %></div>
+  <h2>FBML Source</h2>
+  <div style="height:100px; width:306px;">
+    <%= text_area_tag "source",h(@source || "The source code of the translation will be shown here"), :disabled=> true, :rows=>5, :cols=>40 %>
+  </div>
+  <h2>Errors</h2>
+  <div style="height:100px; width:306px;">
+    <%= text_area_tag "errors",h(@errors || "Errors will be shown here"), :disabled=> true, :rows=>5, :cols=>40 %>
+  </div>
